@@ -1,0 +1,26 @@
+﻿@model List<Blogsite.Models.Blog>
+@{
+    ViewBag.Title = "Anasayfa";
+    Layout = "~/Views/Shared/_LayoutKullanici.cshtml";
+}
+
+<div class="container mt-3">
+    <div class="row row-with-padding">
+        @foreach (var item in Model)
+        {
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                <a href="@Url.Action("BlogIcerik", "Kullanici", new { id = item.Blog_id })" style="text-decoration:none; color:inherit;">
+                    <div class="card bg-dark text-white" style="border-radius:0; height:300px">
+                        <img src="@item.ResimUrl" class="card-img-top" alt="..." style="border-radius:0; height: 200px; object-fit: cover; object-position: center;">
+                        <div class="card-header text-white p-0 mt-1" style="border-radius:0 ;height:100px">
+                            <h4>@item.Baslik</h4>
+                            <h5>@item.AltBaslik</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
+

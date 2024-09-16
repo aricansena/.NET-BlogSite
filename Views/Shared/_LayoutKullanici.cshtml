@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/navbar.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a91e5f7e14.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+        <div class="container">
+            <a class="navbar-brand" href="">Hoşgeldiniz</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        @Html.ActionLink("Anasayfa", "Anasayfa", "Kullanici", new { }, new { @class = "nav-link" })
+                    </li>
+                </ul>
+                <div class="dropdown text-end">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user-circle fa-2x" style="color:white"></i>
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                        <li class="dropdown-item ">@Html.ActionLink("Hesabım", "Index", "Kullanici", new { }, new { @class = "nav-link" })</li>
+                        <li class="dropdown-item ">@Html.ActionLink("Şifre Değiştir", "Index", "Sifre", new { }, new { style = "color:black;text-decoration:none" })</li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li class="dropdown-item"> @Html.ActionLink("Çıkış", "Index", "Logout", new { }, new { style = "color:black;text-decoration:none" })</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main role="main" class="container">
+        @RenderBody()
+    </main>
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="col-12 col-lg-6">
+        <h2 class="text-white">Kategori Ekleme İşlemi</h2>
+        <br />
+        @using (Html.BeginForm("KategoriEkle", "Admin", FormMethod.Post))
+        {
+            <div class="row mb-3">
+                <label for="KategoriAdi" class="col col-form-label text-white">Kategori Adı :</label>
+                <div class="col">
+                    <input type="text" class="form-control" id="KategoriAdi" name="KategoriAdi" />
+                </div>
+                <div class="col text-center d-grid">
+                    <button class="btn btn-light" type="submit">Ekle</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>

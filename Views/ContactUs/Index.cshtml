@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutKullanici.cshtml";
+}
+
+
+    <div id="contact" class="contact">
+        <div class="row g-4">
+            <div> <h3 class="mt-5">İletişime Geçin</h3></div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">İsim</label>
+                                <input type="name" name="name" id="name" class="form-control" required="required">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">E-Posta</label>
+                                <input type="email" name="email" id="email" class="form-control" required="required">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Telefon</label>
+                                <input type="text" name="phone" id="phone" class="form-control" required="required">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="konu" class="form-label">Konu</label>
+                                <input type="text" name="konu" id="konu" class="form-control" required="required">
+                            </div>
+                            <div class="mb-3">
+                                <textarea name="message" id="message" class="form-control" style="height:10rem" placeholder="Mesajınızı yazınız."></textarea>
+                            </div>
+                            <div class="">
+                                <button class="btn btn-primary">Gönder</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*<div class="card mt-5 " style="width: 50rem;">
+            <div class="card-header bg-dark text-white">
+                İletişime Geçin
+            </div>
+            <div class="row m-2">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Adınız" aria-label="First name">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Soyadınız" aria-label="Last name">
+                </div>
+            </div>
+            <div class="form-floating m-2">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <label for="floatingTextarea2">Comments</label>
+            </div>
+
+
+
+

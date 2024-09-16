@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "BlogIcerik";
+    Layout = "~/Views/Shared/_LayoutKullanici.cshtml";
+}
+
+
+<div class="container mt-3 text-white">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>@Model.Baslik</h2>
+            <h5 class="mt-1">@Model.AltBaslik</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+            <img src="@Model.ResimUrl" class="img-fluid mt-2" style="border-radius:0; height:250px; width:100%; object-position: center;align-items:center">
+        </div>
+        <div class="col-md-8 " style="text-indent:25px">
+            <p class="mt-2" style=" text-align: justify; ">@Model.Aciklama</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+﻿@model  IEnumerable<Blogsite.Models.Blog>
+@using GridMvc.Html
+@{
+    ViewBag.Title = "BlogSil";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@*<div class="container mt-5">
+        @Html.Grid(Model).Columns(column =>
+    {
+        column.Add(m => m.Baslik).Titled("Blog Başlık").Sortable(true).Filterable(true);
+        column.Add(m => m.AltBaslik).Titled("Blog Başlık").Sortable(true).Filterable(true);
+        column.Add().Encoded(false).Sanitized(false).SetWidth(30).RenderValueAs(o => Html.ActionLink("Güncelle", "BlogGuncelle", "Admin", new { id = o.Blog_id }, new { @class = "btn btn-dark" }));
+        column.Add().Encoded(false).Sanitized(false).SetWidth(30).RenderValueAs(o => Html.ActionLink("Sil", "BlogSil", "Admin", new { id = o.Blog_id }, new { @class = "btn btn-danger" }));
+
+    }).WithPaging(10);
+
+    </div>*@
+<div class="container mt-5">
+    @if (Model != null && Model.Any())
+    {
+        @Html.Grid(Model).Columns(column =>
+   {
+       column.Add(m => m.Baslik).Titled("Blog Başlık").Sortable(true).Filterable(true);
+       column.Add(m => m.AltBaslik).Titled("Blog Alt Başlık").Sortable(true);
+       column.Add(m => m.Aciklama).Titled("Blog Açıklama").Sortable(true);
+       column.Add().Encoded(false).Sanitized(false).SetWidth(30).RenderValueAs(o => Html.ActionLink("Güncelle", "BlogGuncelle", "Admin", new { id = o.Blog_id }, new { @class = "btn btn-dark" }));
+       column.Add().Encoded(false).Sanitized(false).SetWidth(30).RenderValueAs(o => Html.ActionLink("Sil", "BlogSil", "Admin", new { id = o.Blog_id }, new { @class = "btn btn-danger" }));
+   }).WithPaging(3);
+    }
+    else
+    {
+        <p>No blogs available to display.</p>
+    }
+</div>
+

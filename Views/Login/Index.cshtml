@@ -1,0 +1,51 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/sign.css" rel="stylesheet" />
+</head>
+<body class="d-flex align-items-center py-4 bg-dark">
+    <main class="form-sign text-white w-100 m-auto">
+        @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+        {
+            <h1 class="h3 mb-3 fw-normal" style="text-align:center">Giriş</h1>
+            <br />
+            <div class="form-floating">
+                <input type="text" class="form-control" id="KullaniciAd" name="KullaniciAd">
+                <label for="KullaniciAd">Kullanıcı Adınız</label>
+            </div>
+            <br />
+            <div class="form-floating">
+                <input type="password" class="form-control" id="parola" name="Parola">
+                <label for="parola">Parola</label>
+            </div>
+
+            <div class="col m-3">
+                <div class="row align-items-center justify-content-center">
+                    <button class="btn btn-light w-100" type="submit">Giriş</button>
+                </div>
+                <div class="row mt-2">
+                    <div class="d-flex justify-content-center">
+                        <a href="@Url.Action("Index","Signup")" class="text-white text-decoration-none">Henüz bir hesabınız yok mu ?</a>
+                    </div>
+                </div>
+            </div>
+
+            <br /><br />
+            if (ViewBag.message != null)
+            {
+                <div class="alert alert-primary" role="alert">
+                    @ViewBag.message
+                </div>
+            }
+        }
+    </main>
+</body>
+</html>

@@ -1,0 +1,69 @@
+﻿@model Blogsite.Models.Kullanici
+@{
+    if (Model.KullaniciYetkiTur_id==1)
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    if (Model.KullaniciYetkiTur_id == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutKullanici.cshtml";
+    }
+
+}
+
+<div class="container mt-5">
+    <div class="text-white">
+        <h2>Merhaba @Model.Ad @Model.Soyad </h2>
+    </div>
+</div>
+
+<div class="container mt-5  text-white">
+    @using (Html.BeginForm("Index", "Sifre", FormMethod.Post))
+    {
+        @Html.HiddenFor(m=>m.Kullanici_id)
+        <div class="row g-3 align-items-center mb-3">
+            <div class="col-4">
+                <label for="eskiParola" class="col-form-label">Eski Parola</label>
+            </div>
+            <div class="col-4">
+                <input type="password" id="eskiParola" class="form-control" name="eskiParola" />
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mb-3">
+            <div class="col-4">
+                <label for="yeniParola" class="col-form-label">Yeni Parola</label>
+            </div>
+            <div class="col-4">
+                <input type="password" id="yeniParola" name="yeniParola" class="form-control" aria-describedby="passwordHelp" />
+            </div>
+            <div class="col-4">
+                <span class="form-text text-white" id="passwordHelp">
+                    6 ile 15 karakter uzunluğunda olmalıdır.
+                </span>
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mb-3">
+            <div class="col-4">
+                <label for="yeniParolaKontrol"  class="col-form-label">Yeni Parola Tekrar</label>
+            </div>
+            <div class="col-4">
+                <input type="password" id="yeniParolaKontrol" name="yeniParolaKontrol" class="form-control" />
+            </div>
+        </div>
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <button type="submit" class="btn btn-light">Parola Değiştir</button>
+            </div>
+        </div>
+        <br /> <br />
+        if (ViewBag.mesaj!=null)
+        {
+            <div class="@ViewBag.stil"  role="alert">
+                @ViewBag.mesaj
+            </div>
+        }
+
+    }
+</div>
+
+ 

@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "OnayliSil";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    var kategori = ViewBag.Kategori as Blogsite.Models.Kategori;
+    var bloglar = ViewBag.Bloglar as List<Blogsite.Models.Blog>;
+}
+<h3 class="m-3 text-white">Kategori ve İlgili Blogları Silme</h3>
+<div class="container mt-5">
+    <div class="row row-with-padding">
+        @foreach (var item in ViewBag.Bloglar)
+        {
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card bg-dark text-white" style="border-radius:0; height:300px">
+                    <img src="@item.ResimUrl" class="card-img-top" alt="..." style="border-radius:0; height: 200px; object-fit: cover; object-position: center;">
+                    <div class="card-header text-white p-0 mt-1" style="border-radius:0 ;height:100px">
+                        <h4>@item.Baslik</h4>
+                        <h5>@item.AltBaslik</h5>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<form action="@Url.Action("OnayliSil", new { secilenKategoriId = kategori.Kategori_id })" method="post" style="align-items:center">
+    <p class="mt-2 text-white">@kategori.KategoriAdi kategorisine ait @bloglar.Count() blog bulunmaktadır. Silmek istediğinize emin misiniz?</p>
+    <button class="btn btn-danger m-2 " type="submit">Sil</button>
+    <a class="m-2 text-white" href="@Url.Action("Kategoriler")">Hayır, Geri Dön</a>
+</form>

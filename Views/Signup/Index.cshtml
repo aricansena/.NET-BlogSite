@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Üye Ol</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/sign.css" rel="stylesheet" />
+</head>
+<body class="bg-dark d-flex align-items-center py-4 ">
+    <main class="form-sign text-white w-100 m-auto">
+        @using (Html.BeginForm("Index", "Signup", FormMethod.Post))
+        {
+            <h1 style="text-align:center">Üye Ol</h1>
+            <div class="form-floating my-4">
+                <input type="text" class="form-control" id="floatingAd" name="ad" required/>
+                <label for="floatingAd">Adınız</label>
+            </div>
+            <div class="form-floating my-4">
+                <input type="text" class="form-control" id="floatingSoyad" name="soyad" required />
+                <label for="floatingSoyad">Soyadınız</label>
+            </div>
+            <div class="form-floating my-4">
+                <input type="text" class="form-control" id="floatingTelefon" name="telefon" required/>
+                <label for="floatingTelefon">Telefon Numaranız</label>
+            </div>
+            <div class="form-floating my-4">
+                <input type="text" class="form-control" id="floatingKullaniciAdi" name="kullaniciadi" required/>
+                <label for="floatingKullaniciAdi">Kullanıcı Adınız</label>
+            </div>
+            <div class="form-floating my-4">
+                <input type="email" class="form-control" id="floatingEmail" name="eposta" required />
+                <label for="floatingEmail">E-Posta Adresiniz</label>
+            </div>
+            <div class="form-floating my-4">
+                <input type="password" class="form-control" id="floatingPassword" name="parola" required />
+                <label for="floatingPassword">Parolanız</label>
+            </div>
+            <div class="form-floating my-4">
+                <input type="password" class="form-control" id="floatingPasswordControl" name="parolatekrar" required />
+                <label for="floatingPasswordControl">Parola Tekrarınız</label>
+            </div>
+
+            <div class="col m-3">
+                <div class="row align-items-center justify-content-center">
+                    <button class="btn btn-light w-100" type="submit">Üye Ol</button>
+                </div>
+                <div class="row mt-2">
+                    <div class="d-flex justify-content-center">
+                        <a href="@Url.Action("Index","Login")" class="text-white text-decoration-none">Zaten üyeyseniz giriş sayfası için tıklayınız.</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </main>
+</body>
+</html>

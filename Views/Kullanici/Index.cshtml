@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutKullanici.cshtml";
+}
+
+
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="col-12 col-lg-6">
+
+        <div class="card mt-5" style="width: 18rem;">
+            <div class="card-header bg-dark text-white">
+                Kullanıcı Bilgisi
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">@ViewBag.AdSoyad</li>
+                <li class="list-group-item">@ViewBag.EPosta </li>
+                <li class="list-group-item">@ViewBag.TelefonNo</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+

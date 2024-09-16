@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="col-12 col-lg-4">
+        <div class="row mb-3 text-white">
+            <h3> Kategorileriye Göre Blog Listeleme</h3>
+        </div>
+        @using (Html.BeginForm("Blog", "Admin", FormMethod.Post))
+        {
+            <div class="mb-3">
+                <label for="selectkategori" class="form-label">Kategori Seçiniz</label>
+                <select class="form-select" name="selectkategori" id="selectkategori">
+                    @foreach (var kategori in ViewBag.kategoriler)
+                    {
+                        <option value="@kategori.Kategori_id">@kategori.KategoriAdi</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-light" type="submit">Kategoriyi Göre Listele</button>
+            </div>
+        }
+    </div>
+</div>
+
+
+

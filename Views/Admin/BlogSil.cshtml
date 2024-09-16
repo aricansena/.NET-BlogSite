@@ -1,0 +1,27 @@
+﻿@model Blogsite.Models.Blog
+@{
+    ViewBag.Title = "BlogSil";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="col-12 col-lg-6">
+        <div class="text-white">
+            <h2>@Model.Baslik isimli blog silinecektir.</h2>
+            <h4>Emin misiniz ?</h4>
+        </div>
+        @using (Html.BeginForm("BlogSil", "Admin", FormMethod.Post))
+        {
+            @Html.HiddenFor(m => m.Blog_id)
+            <div class="row g-3 text-center mt-3">
+                <div class="col">
+                    <button class="btn btn-danger col-4" type="submit">Sil</button>
+                </div>
+                <div class="col">
+                    @Html.ActionLink("Vazgeç", "BlogSilGuncelle", "Admin", new { }, new { @class = "btn btn-warning col-4" })
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

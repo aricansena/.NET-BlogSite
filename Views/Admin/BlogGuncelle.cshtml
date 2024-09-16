@@ -1,0 +1,29 @@
+﻿@model Blogsite.Models.Blog
+@{
+    ViewBag.Title = "BlogGuncelle";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container  d-flex justify-content-center align-items-center mt-5">
+    <div class="col-12 col-lg-6">
+        @using (Html.BeginForm("BlogGuncelle", "Admin", FormMethod.Post, new { @class = "row g-3" }))
+        {
+            <input type="hidden" value="@Model.Blog_id" name="id" />
+            <div class="col-6">
+                <label for="baslik" class="form-label text-white"> Blog Başlık</label>
+                <input type="text" class="form-control" id="baslik" name="baslik" value="@Model.Baslik" />
+            </div>
+            <div class="col-6">
+                <label for="altbaslik" class="form-label text-white"> Alt Başlık</label>
+                <input type="text" class="form-control" id="altbaslik" name="altbaslik" value="@Model.AltBaslik" />
+            </div>
+            <div class="col-12">
+                <label for="aciklama" class="form-label text-white"> Açıklama</label>
+                <textarea class="form-control" id="aciklama" name="aciklama" rows="10">@Model.Aciklama</textarea>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-light" type="submit"> Blog Güncelle</button>
+            </div>
+        }
+    </div>
+</div>
